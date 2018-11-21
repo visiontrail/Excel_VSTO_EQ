@@ -83,6 +83,16 @@
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="PresentationCore" version="4.0.0.0" publicKeyToken="31BF3856AD364E35" language="neutral" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="PresentationFramework" version="4.0.0.0" publicKeyToken="31BF3856AD364E35" language="neutral" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
       <assemblyIdentity name="stdole" version="7.0.3300.0" publicKeyToken="B03F5F7F11D50A3A" language="neutral" />
     </dependentAssembly>
   </dependency>
@@ -118,6 +128,11 @@
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="System.Xaml" version="4.0.0.0" publicKeyToken="B77A5C561934E089" language="neutral" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
       <assemblyIdentity name="System.Xml" version="4.0.0.0" publicKeyToken="B77A5C561934E089" language="neutral" />
     </dependentAssembly>
   </dependency>
@@ -127,14 +142,19 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DataAddin.dll" size="13312">
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="WindowsBase" version="4.0.0.0" publicKeyToken="31BF3856AD364E35" language="neutral" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DataAddin.dll" size="42496">
       <assemblyIdentity name="DataAddin" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>hr/GrO2WpGNVtMNPNcQloZf+X1atqUULmqZq82oOvUQ=</dsig:DigestValue>
+        <dsig:DigestValue>vic96qpZrHx9JQUzPh495GlH/IojlDQELylMeiXUJVw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -153,7 +173,7 @@
   <vstav3:addIn xmlns:vstav3="urn:schemas-microsoft-com:vsta.v3">
     <vstav3:entryPointsCollection>
       <vstav3:entryPoints>
-        <vstav3:entryPoint class="DataAddin.ThisAddIn">
+        <vstav3:entryPoint class="DataAddin.EQ_AddIn">
           <assemblyIdentity name="DataAddin" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
         </vstav3:entryPoint>
       </vstav3:entryPoints>
@@ -175,4 +195,4 @@
       </vstov4:customizations>
     </vstav3:application>
   </vstav3:addIn>
-<publisherIdentity name="CN=DESKTOP-30NJOVD\Guoli" issuerKeyHash="c12f497b7ce3b9fa564f1c35e8688689375181dd" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>ZlVmu7O5u9T0eZdhiuYYZFUHiOowT+FI3alX9NX0d1g=</DigestValue></Reference></SignedInfo><SignatureValue>MQER0/wDCoUqb4OIN9z5iqU+OLRqlJ7w6s881wRTq6qEvKz+mTdhBdGfEupiV6dXcb8l8FbwtvKQNNawZ52UEUYZo67LDZXPNzFgpAkdd38ElQ8WIH+Tlcg8g4fmitpvwtYgj6UDuIJLnPsFNf4O+djttxoA5QBj7Tu85jL9FWo=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>4Pc6EYLVWwrVQR0i19w07SkavqcDVzukDd1F/TAIqTvjfORtflP3ZV457iAFjA9Os4cNRmx6lqXeAKBJcPevN4t57GmvquQJqwNKhKJy05JU6PLzj+43F2EGQau9GV3LoVBuoj/8tb2Zw0fMX994mO43nqf7HUukjzmbQLNJwF0=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="5877f4d5f457a9dd48e14f30ea8807556418e68a619779f4d4bbb9b3bb665566" Description="" Url=""><as:assemblyIdentity name="DataAddin.dll" version="1.0.0.0" publicKeyToken="144dc87e69b1e693" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=DESKTOP-30NJOVD\Guoli</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>oSqQaQYgtrfG25GlHyWMTVgNslge3hPSV3cut683tdg=</DigestValue></Reference></SignedInfo><SignatureValue>wb3mvf7lUlqv40Ad6WOuz2NM8+tbdY6meeVeuJDbtquQqBdv6y1Yytwa4kvZ1r2E+1YSRwqVrervTojRBqe4/e9nFoxA7vAYao3hF2XPnouBPbiVOp+luDUnd57t/IkxBxP/PN3hnp+9c+YptU8lfh/fbXbn022+qhIChbSUodw=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>4Pc6EYLVWwrVQR0i19w07SkavqcDVzukDd1F/TAIqTvjfORtflP3ZV457iAFjA9Os4cNRmx6lqXeAKBJcPevN4t57GmvquQJqwNKhKJy05JU6PLzj+43F2EGQau9GV3LoVBuoj/8tb2Zw0fMX994mO43nqf7HUukjzmbQLNJwF0=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB7TCCAVagAwIBAgIQVqYqkfIhcpNITmlFzRg27zANBgkqhkiG9w0BAQsFADA1MTMwMQYDVQQDHioARABFAFMASwBUAE8AUAAtADMAMABOAEoATwBWAEQAXABHAHUAbwBsAGkwHhcNMTgxMTIxMTMyNTMyWhcNMTkxMTIxMTkyNTMyWjA1MTMwMQYDVQQDHioARABFAFMASwBUAE8AUAAtADMAMABOAEoATwBWAEQAXABHAHUAbwBsAGkwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAOD3OhGC1VsK1UEdItfcNO0pGr6nA1c7pA3dRf0wCKk743zkbX5T92VeOe4gBYwPTrOHDUZsepal3gCgSXD3rzeLeexpr6rkCasDSoSictOSVOjy84/uNxdhBkGrvRldy6FQbqI//LW9mcNHzF/feJjuN56n+x1LpI85m0CzScBdAgMBAAEwDQYJKoZIhvcNAQELBQADgYEAeXwfiBrJpPJcNCY2+qaSmHn0Fp7ku4TgUeYrEEvFQDF7nGsPtfJnlfcwKEUFCocJGL+05abIx3dukCmCjjYM0fL4exRGj+UkMnQh06KjdEnROj/IutWJtAg96awdJKR9AgyuY4n3yazD2h/IHR6Y3h0SIhTeWMPhQt9IParuKxM=</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
+<publisherIdentity name="CN=DESKTOP-30NJOVD\Guoli" issuerKeyHash="c12f497b7ce3b9fa564f1c35e8688689375181dd" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>AjKJu6/AwJ1pcE8VbNX3vbfsrDZrL3bKaZrD6ruwV6Q=</DigestValue></Reference></SignedInfo><SignatureValue>wi9ebO4v5dZbQFInNx8jzR8/+AGbWextV8Bm7cMLP9SeEde1dL/nX3yjR7OfavzrqbNUEAQg5QHbHFCW8r4DXP9akBnc7aOm84FsUZYWM2b0vYAMrNTbZ0sMCJKqSRMW2W8Prn3xEFL4+MQ9NZmQlYKGjk3NJxpD5ewaktuV/Vs=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>4Pc6EYLVWwrVQR0i19w07SkavqcDVzukDd1F/TAIqTvjfORtflP3ZV457iAFjA9Os4cNRmx6lqXeAKBJcPevN4t57GmvquQJqwNKhKJy05JU6PLzj+43F2EGQau9GV3LoVBuoj/8tb2Zw0fMX994mO43nqf7HUukjzmbQLNJwF0=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="a457b0bbeac39a69ca762f6b36acecb7bdf7d56c154f70699dc0c0afbb893202" Description="" Url=""><as:assemblyIdentity name="DataAddin.dll" version="1.0.0.0" publicKeyToken="144dc87e69b1e693" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=DESKTOP-30NJOVD\Guoli</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>aM42whgerJNjkyRTK0ClgR4I5O4CMGMVyCg09LBfa5o=</DigestValue></Reference></SignedInfo><SignatureValue>zz/pTKnX3QgDp/jJv4p/kPZ8hIzz+f9gTcpodxD9+GIIago+ilZO/zloyXGEHDorSa65RHl+qVyDla0YWbH3anLSQiUwq8Z2e1SpDxuMQDCDVJZGE8quumeBuaxht1b48WdssRZ+o5OsYmbYiVn3OHAzi0ebljvSsqt6K9nlmv0=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>4Pc6EYLVWwrVQR0i19w07SkavqcDVzukDd1F/TAIqTvjfORtflP3ZV457iAFjA9Os4cNRmx6lqXeAKBJcPevN4t57GmvquQJqwNKhKJy05JU6PLzj+43F2EGQau9GV3LoVBuoj/8tb2Zw0fMX994mO43nqf7HUukjzmbQLNJwF0=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB7TCCAVagAwIBAgIQVqYqkfIhcpNITmlFzRg27zANBgkqhkiG9w0BAQsFADA1MTMwMQYDVQQDHioARABFAFMASwBUAE8AUAAtADMAMABOAEoATwBWAEQAXABHAHUAbwBsAGkwHhcNMTgxMTIxMTMyNTMyWhcNMTkxMTIxMTkyNTMyWjA1MTMwMQYDVQQDHioARABFAFMASwBUAE8AUAAtADMAMABOAEoATwBWAEQAXABHAHUAbwBsAGkwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAOD3OhGC1VsK1UEdItfcNO0pGr6nA1c7pA3dRf0wCKk743zkbX5T92VeOe4gBYwPTrOHDUZsepal3gCgSXD3rzeLeexpr6rkCasDSoSictOSVOjy84/uNxdhBkGrvRldy6FQbqI//LW9mcNHzF/feJjuN56n+x1LpI85m0CzScBdAgMBAAEwDQYJKoZIhvcNAQELBQADgYEAeXwfiBrJpPJcNCY2+qaSmHn0Fp7ku4TgUeYrEEvFQDF7nGsPtfJnlfcwKEUFCocJGL+05abIx3dukCmCjjYM0fL4exRGj+UkMnQh06KjdEnROj/IutWJtAg96awdJKR9AgyuY4n3yazD2h/IHR6Y3h0SIhTeWMPhQt9IParuKxM=</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

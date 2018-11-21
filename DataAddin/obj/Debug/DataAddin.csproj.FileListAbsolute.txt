@@ -11,3 +11,17 @@ D:\Workspace\Learn\Excel_DataAddin\DataAddin\DataAddin\obj\Debug\DataAddin.cspro
 D:\Workspace\Learn\Excel_DataAddin\DataAddin\DataAddin\obj\Debug\DataAddin.csproj.CopyComplete
 D:\Workspace\Learn\Excel_DataAddin\DataAddin\DataAddin\obj\Debug\DataAddin.dll
 D:\Workspace\Learn\Excel_DataAddin\DataAddin\DataAddin\obj\Debug\DataAddin.pdb
+E:\Workspace\Learn\Excel_VSTO_EQ\DataAddin\bin\Debug\DataAddin.dll
+E:\Workspace\Learn\Excel_VSTO_EQ\DataAddin\bin\Debug\DataAddin.pdb
+E:\Workspace\Learn\Excel_VSTO_EQ\DataAddin\bin\Debug\DataAddin.dll.manifest
+E:\Workspace\Learn\Excel_VSTO_EQ\DataAddin\bin\Debug\DataAddin.vsto
+E:\Workspace\Learn\Excel_VSTO_EQ\DataAddin\bin\Debug\Microsoft.Office.Tools.Common.v4.0.Utilities.dll
+E:\Workspace\Learn\Excel_VSTO_EQ\DataAddin\obj\Debug\DataAddin.csprojAssemblyReference.cache
+E:\Workspace\Learn\Excel_VSTO_EQ\DataAddin\obj\Debug\DataAddin.EarthQuakeDep.resources
+E:\Workspace\Learn\Excel_VSTO_EQ\DataAddin\obj\Debug\DataAddin.Properties.Resources.resources
+E:\Workspace\Learn\Excel_VSTO_EQ\DataAddin\obj\Debug\DataAddin.csproj.GenerateResource.cache
+E:\Workspace\Learn\Excel_VSTO_EQ\DataAddin\obj\Debug\DataAddin.csproj.CoreCompileInputs.cache
+E:\Workspace\Learn\Excel_VSTO_EQ\DataAddin\obj\Debug\DataAddin.csproj.CopyComplete
+E:\Workspace\Learn\Excel_VSTO_EQ\DataAddin\obj\Debug\DataAddin.dll
+E:\Workspace\Learn\Excel_VSTO_EQ\DataAddin\obj\Debug\DataAddin.pdb
+E:\Workspace\Learn\Excel_VSTO_EQ\DataAddin\obj\Debug\DataAddin.Forms.SelectTableColumns.resources

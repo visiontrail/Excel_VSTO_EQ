@@ -37,9 +37,10 @@ namespace DataAddin
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EarthQuakeDep));
             this.tab1 = this.Factory.CreateRibbonTab();
             this.group1 = this.Factory.CreateRibbonGroup();
-            this.dropDown1 = this.Factory.CreateRibbonDropDown();
+            this.SelectColums = this.Factory.CreateRibbonButton();
             this.group2 = this.Factory.CreateRibbonGroup();
             this.group3 = this.Factory.CreateRibbonGroup();
             this.group5 = this.Factory.CreateRibbonGroup();
@@ -64,14 +65,18 @@ namespace DataAddin
             // 
             // group1
             // 
-            this.group1.Items.Add(this.dropDown1);
-            this.group1.Label = "步骤1：选择表";
+            this.group1.Items.Add(this.SelectColums);
+            this.group1.Label = "表格生成区";
             this.group1.Name = "group1";
             // 
-            // dropDown1
+            // SelectColums
             // 
-            this.dropDown1.Label = "表：";
-            this.dropDown1.Name = "dropDown1";
+            this.SelectColums.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
+            this.SelectColums.Image = ((System.Drawing.Image)(resources.GetObject("SelectColums.Image")));
+            this.SelectColums.Label = "选择列";
+            this.SelectColums.Name = "SelectColums";
+            this.SelectColums.ShowImage = true;
+            this.SelectColums.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.SelectColums_Click);
             // 
             // group2
             // 
@@ -126,12 +131,12 @@ namespace DataAddin
         internal Microsoft.Office.Tools.Ribbon.RibbonTab tab1;
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup group1;
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup group2;
-        internal RibbonDropDown dropDown1;
         internal RibbonGroup group3;
         internal RibbonGroup group4;
         internal RibbonToggleButton toggleButton1;
         internal RibbonGroup group5;
         internal RibbonButton button1;
+        internal RibbonButton SelectColums;
     }
 
     partial class ThisRibbonCollection
