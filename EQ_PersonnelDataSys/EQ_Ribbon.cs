@@ -5,12 +5,13 @@ using System.Text;
 using Microsoft.Office.Tools.Ribbon;
 using Excel = Microsoft.Office.Interop.Excel;
 
-namespace DataAddin
+namespace EQ_PersonnelDataSys
 {
-    public partial class EarthQuakeDep
+    public partial class EQ_Ribbon
     {
-        private void EarthQuakeDep_Load(object sender, RibbonUIEventArgs e)
+        private void EQ_Ribbon_Load(object sender, RibbonUIEventArgs e)
         {
+
         }
 
         /// <summary>
@@ -18,11 +19,9 @@ namespace DataAddin
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void SelectColums_Click(object sender, RibbonControlEventArgs e)
+        private void button1_Click(object sender, RibbonControlEventArgs e)
         {
-            Excel.Worksheet wst = ((Excel.Worksheet)Globals.ThisAddIn.Application.ActiveSheet);
-            Excel.Range cell = wst.Range["A1"];
-            cell.Value2 = "123";
+
         }
     }
 }

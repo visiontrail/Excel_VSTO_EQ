@@ -60,7 +60,7 @@ namespace DataAddin
             this.tab1.Groups.Add(this.group3);
             this.tab1.Groups.Add(this.group5);
             this.tab1.Groups.Add(this.group4);
-            this.tab1.Label = "地震局人事管理";
+            this.tab1.Label = "学习用";
             this.tab1.Name = "tab1";
             // 
             // group1

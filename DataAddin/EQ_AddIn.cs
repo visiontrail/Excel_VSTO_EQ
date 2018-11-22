@@ -34,11 +34,11 @@ namespace DataAddin
         /// <param name="Cancel"></param>
         void Application_WorkbookBeforeSave(Excel.Workbook Wb, bool SaveAsUI, ref bool Cancel)
         {
-            Excel.Worksheet activeWorksheet = ((Excel.Worksheet)Application.ActiveSheet);
-            Excel.Range firstRow = activeWorksheet.get_Range("A1");
-            firstRow.EntireRow.Insert(Excel.XlInsertShiftDirection.xlShiftDown);
-            Excel.Range newFirstRow = activeWorksheet.get_Range("A1");
-            newFirstRow.Value2 = "This text was added by using code";
+            Excel.Worksheet activeWorksheet = ((Excel.Worksheet)Application.ActiveSheet);     // 获取当前的Sheet;
+            Excel.Range firstRow = activeWorksheet.get_Range("A1");                           // 获取A1单元格;
+            firstRow.EntireRow.Insert(Excel.XlInsertShiftDirection.xlShiftDown);              // 为这个WorkSheet添加一行;
+            Excel.Range newFirstRow = activeWorksheet.get_Range("A1");                        // 获取新添加的一行;
+            newFirstRow.Value2 = "This text was added by using code";                         // 为新添加的一行数据添加内容;
         }
 
         #region VSTO 生成的代码
