@@ -6,6 +6,7 @@ using System.Data;
 using System.Data.OleDb;
 using Microsoft.Office.Tools.Ribbon;
 using Excel = Microsoft.Office.Interop.Excel;
+using System.Windows.Forms;
 
 namespace Experiment_Excel_VSTO
 {
@@ -27,8 +28,22 @@ namespace Experiment_Excel_VSTO
         private void Get_Sheet_Info_Click(object sender, RibbonControlEventArgs e)
         {
             // ____________________获取Sheet的方式____________________________:
-            Excel.Worksheet wst = ((Excel.Worksheet)Globals.ThisAddIn.Application.ActiveSheet);                 // 获取当前的Sheet页;
-            Excel.Worksheet wst2 = ((Excel.Worksheet)Globals.ThisAddIn.Application.Worksheets["考核情况"]);     // 根据名称获取Sheet页;
+            Excel.Worksheet wst = ((Excel.Worksheet)Globals.ThisAddIn.Application.ActiveSheet);                     // 获取当前的Sheet页;
+            try
+            {
+                Excel.Worksheet wst2 = ((Excel.Worksheet)Globals.ThisAddIn.Application.Worksheets["考核情况"]);     // 根据名称获取Sheet页;
+
+                // 获取表中单元格内容;
+                var a = wst2.Range["A8"].Value;
+
+                // 操作Sheet表:
+                Excel.Range cell = wst.Range["A8"];
+                cell.Value2 = "123";
+            }
+            catch
+            {
+                MessageBox.Show("没有考核情况表，请检查");
+            }
 
             // ____________________读取Sheet表____________________________:
 
@@ -38,12 +53,7 @@ namespace Experiment_Excel_VSTO
                 m_AllSheets.Add(((Excel.Worksheet)sheetlist).Name);
             }
 
-            // 获取表中单元格内容;
-            var a = wst2.Range["A8"].Value;
-
-            // 操作Sheet表:
-            Excel.Range cell = wst.Range["A8"];
-            cell.Value2 = "123";
+            
         }
     }
 }

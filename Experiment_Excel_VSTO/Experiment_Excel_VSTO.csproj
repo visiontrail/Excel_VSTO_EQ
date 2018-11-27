@@ -205,10 +205,11 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>Experiment_Excel_VSTO_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>
+    </ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>C62650F382787A0312B2B7D14CF986F774AB4536</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>03209CBD759AE1FCD1C42EE4A8E8024330320BCD</ManifestCertificateThumbprint>
   </PropertyGroup>
   <!-- Include the build rules for a C# project. -->
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

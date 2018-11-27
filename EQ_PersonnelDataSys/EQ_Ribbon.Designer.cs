@@ -37,7 +37,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EQ_Ribbon));
             this.tab1 = this.Factory.CreateRibbonTab();
             this.group1 = this.Factory.CreateRibbonGroup();
-            this.button1 = this.Factory.CreateRibbonButton();
+            this.Select_Column = this.Factory.CreateRibbonButton();
+            this.Select_Template = this.Factory.CreateRibbonButton();
             this.tab1.SuspendLayout();
             this.group1.SuspendLayout();
             this.SuspendLayout();
@@ -51,18 +52,27 @@
             // 
             // group1
             // 
-            this.group1.Items.Add(this.button1);
-            this.group1.Label = "group1";
+            this.group1.Items.Add(this.Select_Column);
+            this.group1.Items.Add(this.Select_Template);
+            this.group1.Label = "生成表格";
             this.group1.Name = "group1";
             // 
-            // button1
+            // Select_Column
             // 
-            this.button1.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Label = "按钮";
-            this.button1.Name = "button1";
-            this.button1.ShowImage = true;
-            this.button1.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.button1_Click);
+            this.Select_Column.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
+            this.Select_Column.Image = ((System.Drawing.Image)(resources.GetObject("Select_Column.Image")));
+            this.Select_Column.Label = "选择列";
+            this.Select_Column.Name = "Select_Column";
+            this.Select_Column.ShowImage = true;
+            this.Select_Column.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.Select_Column_Click);
+            // 
+            // Select_Template
+            // 
+            this.Select_Template.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
+            this.Select_Template.Image = ((System.Drawing.Image)(resources.GetObject("Select_Template.Image")));
+            this.Select_Template.Label = "选择模板";
+            this.Select_Template.Name = "Select_Template";
+            this.Select_Template.ShowImage = true;
             // 
             // EQ_Ribbon
             // 
@@ -82,7 +92,8 @@
 
         internal Microsoft.Office.Tools.Ribbon.RibbonTab tab1;
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup group1;
-        internal Microsoft.Office.Tools.Ribbon.RibbonButton button1;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton Select_Column;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton Select_Template;
     }
 
     partial class ThisRibbonCollection

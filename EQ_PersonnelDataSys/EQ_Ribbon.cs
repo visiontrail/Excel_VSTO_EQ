@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Microsoft.Office.Tools.Ribbon;
 using Excel = Microsoft.Office.Interop.Excel;
+using EQ_PersonnelDataSys.WinForms;
 
 namespace EQ_PersonnelDataSys
 {
@@ -19,9 +20,10 @@ namespace EQ_PersonnelDataSys
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void button1_Click(object sender, RibbonControlEventArgs e)
+        private void Select_Column_Click(object sender, RibbonControlEventArgs e)
         {
-
+            SelectColumns sc_window = new SelectColumns();
+            sc_window.Show();
         }
     }
 }
