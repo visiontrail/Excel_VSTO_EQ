@@ -30,9 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SelectColumns));
             this.label1 = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.all_db = new System.Windows.Forms.ListBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.all_col = new System.Windows.Forms.ListBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -50,14 +50,14 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "选择数据库";
             // 
-            // listBox1
+            // all_db
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 12;
-            this.listBox1.Location = new System.Drawing.Point(26, 41);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(90, 124);
-            this.listBox1.TabIndex = 1;
+            this.all_db.FormattingEnabled = true;
+            this.all_db.ItemHeight = 12;
+            this.all_db.Location = new System.Drawing.Point(26, 41);
+            this.all_db.Name = "all_db";
+            this.all_db.Size = new System.Drawing.Size(90, 124);
+            this.all_db.TabIndex = 1;
             // 
             // label2
             // 
@@ -68,14 +68,14 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "选择列";
             // 
-            // listBox2
+            // all_col
             // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.ItemHeight = 12;
-            this.listBox2.Location = new System.Drawing.Point(150, 41);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(90, 124);
-            this.listBox2.TabIndex = 3;
+            this.all_col.FormattingEnabled = true;
+            this.all_col.ItemHeight = 12;
+            this.all_col.Location = new System.Drawing.Point(150, 41);
+            this.all_col.Name = "all_col";
+            this.all_col.Size = new System.Drawing.Size(90, 124);
+            this.all_col.TabIndex = 3;
             // 
             // button1
             // 
@@ -146,9 +146,9 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.listBox2);
+            this.Controls.Add(this.all_col);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.all_db);
             this.Controls.Add(this.label1);
             this.Name = "SelectColumns";
             this.Text = "步骤1：选择列";
@@ -160,9 +160,9 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox all_db;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ListBox listBox2;
+        private System.Windows.Forms.ListBox all_col;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label3;

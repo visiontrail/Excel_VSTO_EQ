@@ -5,7 +5,7 @@ using System.Text;
 using System.Data;
 using System.Data.OleDb;
 using Microsoft.Office.Tools.Ribbon;
-using Excel = Microsoft.Office.Interop.Excel;
+using Microsoft.Office.Interop.Excel;
 using System.Windows.Forms;
 
 namespace Experiment_Excel_VSTO
@@ -28,17 +28,41 @@ namespace Experiment_Excel_VSTO
         private void Get_Sheet_Info_Click(object sender, RibbonControlEventArgs e)
         {
             // ____________________获取Sheet的方式____________________________:
-            Excel.Worksheet wst = ((Excel.Worksheet)Globals.ThisAddIn.Application.ActiveSheet);                     // 获取当前的Sheet页;
+           Worksheet wst = ((Worksheet)Globals.ThisAddIn.Application.ActiveSheet);                     // 获取当前的Sheet页;
+            //Excel.Sheets st = (Excel.Sheets)Globals.ThisAddIn.Application.Sheets["考核情况"];
+
             try
             {
-                Excel.Worksheet wst2 = ((Excel.Worksheet)Globals.ThisAddIn.Application.Worksheets["考核情况"]);     // 根据名称获取Sheet页;
+                Worksheet wst2 = ((Worksheet)Globals.ThisAddIn.Application.Worksheets["考核情况"]);     // 根据名称获取Sheet页;
 
                 // 获取表中单元格内容;
-                var a = wst2.Range["A8"].Value;
+                var content = wst2.Range["A1"].Value;
+                List<string> all_index = new List<string>();
+                List<string> all_column = new List<string>();
 
                 // 操作Sheet表:
-                Excel.Range cell = wst.Range["A8"];
+                Range cell = wst.Range["A8"];
                 cell.Value2 = "123";
+
+                int count_num = wst2.UsedRange.Rows.Count;
+                int columns_num = wst2.UsedRange.Columns.Count;
+
+                // 取出这个表所有的列;
+                foreach (Range all_col in wst2.UsedRange.Columns)
+                {
+                    all_column.Add(all_col.Value2[1, 1]);
+                }
+
+
+                //foreach (var column_name in wst2.Rows[0])
+                //{
+                //    if(column_name == null)
+                //    {
+                //        break;
+                //    }
+                //    all_column.Add(column_name);
+                //}
+
             }
             catch
             {
@@ -50,8 +74,9 @@ namespace Experiment_Excel_VSTO
             // 获取表名;
             foreach (var sheetlist in Globals.ThisAddIn.Application.Worksheets)
             {
-                m_AllSheets.Add(((Excel.Worksheet)sheetlist).Name);
+                m_AllSheets.Add(((Worksheet)sheetlist).Name);
             }
+            
 
             
         }

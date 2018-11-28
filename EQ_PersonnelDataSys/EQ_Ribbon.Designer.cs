@@ -61,7 +61,7 @@
             // 
             this.Select_Column.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
             this.Select_Column.Image = ((System.Drawing.Image)(resources.GetObject("Select_Column.Image")));
-            this.Select_Column.Label = "选择列";
+            this.Select_Column.Label = "新建查询";
             this.Select_Column.Name = "Select_Column";
             this.Select_Column.ShowImage = true;
             this.Select_Column.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.Select_Column_Click);
