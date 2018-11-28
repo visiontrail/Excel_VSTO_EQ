@@ -46,6 +46,10 @@ namespace EQ_PersonnelDataSys
                     try
                     {
                         string ret = (string)all_col.Value2[1, 1];
+                        if(ret == "姓名")
+                        {
+                            continue;
+                        }
                         all_column.Add(ret);
                     }
                     catch

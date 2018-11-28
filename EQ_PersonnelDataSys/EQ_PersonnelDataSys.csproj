@@ -100,6 +100,9 @@
   -->
   <ItemGroup>
     <Reference Include="Accessibility" />
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -165,11 +168,23 @@
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="WinForms\SaveTemplate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinForms\SaveTemplate.Designer.cs">
+      <DependentUpon>SaveTemplate.cs</DependentUpon>
+    </Compile>
     <Compile Include="WinForms\SelectColumns.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="WinForms\SelectColumns.Designer.cs">
       <DependentUpon>SelectColumns.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WinForms\SelectTemplate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinForms\SelectTemplate.Designer.cs">
+      <DependentUpon>SelectTemplate.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="EQ_Ribbon.resx">
       <DependentUpon>EQ_Ribbon.cs</DependentUpon>
@@ -183,10 +198,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="WinForms\SaveTemplate.resx">
+      <DependentUpon>SaveTemplate.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="WinForms\SelectColumns.resx">
       <DependentUpon>SelectColumns.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="WinForms\SelectTemplate.resx">
+      <DependentUpon>SelectTemplate.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="EQ_PersonnelDataSys_TemporaryKey.pfx" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -205,6 +227,9 @@
       <DependentUpon>ThisAddIn.Designer.xml</DependentUpon>
     </Compile>
     <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Model\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -117,25 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="Sel_Column.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EwAACxMBAJqcGAAAAPNJREFUSEu91rENwjAUhOG0DMAE7AINM1BEjIFESQVUrEJDT0lHxxJQ0Zl7UiLF
-        yY/kOLaLrzn53ROBJFTOuaIwzAnDnDDMCcO6rkNsZN7LPNSNIQ2Dm9x7mYe6MaRhcBEnu07moW4MaRgc
-        xRaadZN5qBtDGgZ7aRd+ZSHeGerGUIcPYpfs/Id9uoe0C81LZhK1sFs0xlWiFn6ECkOcZPTCdzMcayvY
-        jaEOT11oltQ9CIwOp1j4pO5BYHQ4xcIVdQ8Co8PFv8Mpv1K7T60DuzHsDI8VfR8Wf9KESPosDVH8bVH8
-        fVj8jZ/uP01OGOaEYT6u+gHlgijWgzanOwAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="Del_Column.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EwAACxMBAJqcGAAAAPRJREFUSEu91i0OwkAUBOBaDsAJuAsYzoBoOAYJEgUoroLBI3E4LgEKt8wkfcmy
-        O23ohn3iM5P3Q6Ht0oQQXMmwJhnWJMOaZNi27ZAprJJMUrNlqJojV7gkmaRmy1A1dzYQ4BRlvdRsGapm
-        WAKX0b7LBqnZMhTNM3iDLdyCqvuiZsswaZzAA2wZ3YBXeezBr3ynZmcBoTh2hnjZz9K5lAWEYsNPK4f9
-        4KVmZwGhmNZRc4mnmp0FhOJF0lxi1MJ70lxi1MJ50lxi1EL339AcuuYSo+9S4/ockvubhlzfpcb1tDCu
-        56FxPfHp//9papJhTTKsJzQflP0o1qfY95IAAAAASUVORK5CYII=
-</value>
-  </data>
 </root>

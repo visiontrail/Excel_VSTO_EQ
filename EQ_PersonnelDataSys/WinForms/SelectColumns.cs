@@ -31,5 +31,29 @@ namespace EQ_PersonnelDataSys.WinForms
             this.all_col.DataSource = all_data[seleted];
 
         }
+
+        private void Sel_Column_Click(object sender, EventArgs e)
+        {
+            if(Template_Col.Items.Contains(all_col.SelectedItem.ToString()))
+            {
+                MessageBox.Show("已选择相同项");
+            }
+            this.Template_Col.Items.Add(this.all_col.SelectedItem.ToString());
+        }
+
+        private void Del_Column_Click(object sender, EventArgs e)
+        {
+            this.Template_Col.Items.Remove(this.Template_Col.SelectedItem.ToString());
+        }
+
+        /// <summary>
+        /// 保存数据模板;
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Save_Template_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
