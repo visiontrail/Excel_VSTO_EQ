@@ -73,6 +73,7 @@
             this.Select_Template.Label = "选择模板";
             this.Select_Template.Name = "Select_Template";
             this.Select_Template.ShowImage = true;
+            this.Select_Template.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.Select_Template_Click);
             // 
             // EQ_Ribbon
             // 

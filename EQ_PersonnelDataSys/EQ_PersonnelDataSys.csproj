@@ -159,6 +159,7 @@
     can be found.
   -->
   <ItemGroup>
+    <Compile Include="Control\InitDataReader.cs" />
     <Compile Include="EQ_Ribbon.cs">
       <SubType>Component</SubType>
     </Compile>

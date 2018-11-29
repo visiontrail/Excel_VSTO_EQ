@@ -141,6 +141,7 @@
             this.Confirm.TabIndex = 9;
             this.Confirm.Text = "确定";
             this.Confirm.UseVisualStyleBackColor = true;
+            this.Confirm.Click += new System.EventHandler(this.Confirm_Click);
             // 
             // label4
             // 
