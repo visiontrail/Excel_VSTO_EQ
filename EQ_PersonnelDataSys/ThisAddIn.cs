@@ -63,8 +63,8 @@ namespace EQ_PersonnelDataSys
         /// <param name="Wb"></param>
         private void Application_WorkbookOpen(Excel.Workbook Wb)
         {
+            // 获取Excel文件的路径;
             filepath = Wb.Path + "\\" + Wb.Name;
-            
         }
 
         

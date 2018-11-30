@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.OleDb;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -82,12 +83,41 @@ namespace EQ_PersonnelDataSys.WinForms
         /// <param name="e"></param>
         private void Confirm_Click(object sender, EventArgs e)
         {
-            System.Data.DataTable dt = EQ_Ribbon.ds.Tables[0];
-            DataRow[] dtRow = dt.Select("姓名=安艳芬"); //根据查询条件，筛选出所有满足条件的列
-            foreach (DataRow item in dtRow)//把满足条件的所有列赛到新表中
+            // 实验代码，遍历了所有表所有行的所有数据;
+            //foreach (DataTable dt in EQ_Ribbon.ds.Tables)
+            //{
+            //    foreach (DataRow dr in dt.Rows)
+            //        foreach (DataColumn dc in dt.Columns)
+            //            Console.WriteLine("1:" + dt.TableName + "2:" + dc.ColumnName + "3:" + dr[dc]);
+            //}
+            string connectionString = string.Format("provider=Microsoft.Jet.OLEDB.4.0; data source={0};" +
+                "Extended Properties=Excel 8.0;", ThisAddIn.filepath);
+
+            DataSet ds = new DataSet();
+
+            using (OleDbConnection con = new OleDbConnection(connectionString))
             {
-                //item.ItemArray;
+                var dataTable = new System.Data.DataTable();
+                //string query = string.Format("SELECT * FROM [{0}]", "考核情况" + "$" + "left join [政治面貌$]");
+                string query = string.Format("SELECT [政治面貌$].姓名, [政治面貌$].政治面貌, [考核情况$].考核结果" +
+                    " FROM [政治面貌$], [考核情况$]" +
+                    " WHERE [政治面貌$].姓名 = [考核情况$].姓名 ");
+
+                con.Open();
+                OleDbDataAdapter adapter = new OleDbDataAdapter(query, con);
+
+                adapter.Fill(dataTable);
+                ds.Tables.Add(dataTable);
+                con.Close();
             }
+
+            foreach (DataTable dt in ds.Tables)
+            {
+                foreach (DataRow dr in dt.Rows)
+                    foreach (DataColumn dc in dt.Columns)
+                        Console.WriteLine("1:" + dt.TableName + "2:" + dc.ColumnName + "3:" + dr[dc]);
+            }
+
         }
     }
 }

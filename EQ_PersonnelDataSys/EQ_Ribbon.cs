@@ -44,10 +44,11 @@ namespace EQ_PersonnelDataSys
                     continue;
                 }
 
-                // 将所有表都保存到DataSet当中;
+                // 将所有表都保存到DataSet当中;保存到内存中，后续使用内存数据库查询会更快;
                 using (OleDbConnection con = new OleDbConnection(connectionString))
                 {
                     var dataTable = new System.Data.DataTable();
+                    dataTable.TableName = sheet_name;
                     string query = string.Format("SELECT * FROM [{0}]", sheet_name + "$");
                     con.Open();
                     OleDbDataAdapter adapter = new OleDbDataAdapter(query, con);
