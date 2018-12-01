@@ -6,7 +6,9 @@ using System.Data;
 using System.Data.OleDb;
 using Microsoft.Office.Tools.Ribbon;
 using Microsoft.Office.Interop.Excel;
+using ExcelTools = Microsoft.Office.Tools;
 using System.Windows.Forms;
+
 
 namespace Experiment_Excel_VSTO
 {
@@ -95,7 +97,20 @@ namespace Experiment_Excel_VSTO
             string connectionString = string.Format("provider=Microsoft.Jet.OLEDB.4.0; data source={0};" +
                 "Extended Properties=Excel 8.0;", ThisAddIn.filepath);
 
+            // 创建一个DataSet;
             DataSet ds = new DataSet();
+
+            // 创建一个新的Sheet页;
+            Worksheet wst;
+            wst = (Worksheet)Globals.ThisAddIn.Application.Worksheets.Add();     
+            wst.Name = "新建Sheet页";
+
+            // 添加一个ListObject到WorkSheet;
+            ExcelTools.Excel.Worksheet worksheet = Globals.Factory.GetVstoObject(wst);
+            ExcelTools.Excel.ListObject list1;
+            Range cell = worksheet.Range["$A$1:$Z$9999"];
+            list1 = worksheet.Controls.AddListObject(cell, "list1");
+            list1.AutoSetDataBoundColumnHeaders = true;
 
             using (OleDbConnection con = new OleDbConnection(connectionString))
             {
@@ -111,22 +126,18 @@ namespace Experiment_Excel_VSTO
                 adapter.Fill(dataTable);
                 ds.Tables.Add(dataTable);
                 con.Close();
+
+                list1.SetDataBinding(dataTable, null, "姓名", "政治面貌", "考核结果");
             }
 
             // 打印DataTable当中的所有数据;
-            foreach (System.Data.DataTable dt in ds.Tables)
-            {
-                foreach (DataRow dr in dt.Rows)
-                    foreach (DataColumn dc in dt.Columns)
-                        Console.WriteLine("1:" + dt.TableName + "2:" + dc.ColumnName + "3:" + dr[dc]);
-            }
+//             foreach (System.Data.DataTable dt in ds.Tables)
+//             {
+//                 foreach (DataRow dr in dt.Rows)
+//                     foreach (DataColumn dc in dt.Columns)
+//                         Console.WriteLine("1:" + dt.TableName + "2:" + dc.ColumnName + "3:" + dr[dc]);
+//             }
 
-            Worksheet wst;
-
-            wst = (Worksheet)Globals.ThisAddIn.Application.Worksheets.Add();
-            wst.Name = "新建Sheet页";
-
-            
 
         }
         
