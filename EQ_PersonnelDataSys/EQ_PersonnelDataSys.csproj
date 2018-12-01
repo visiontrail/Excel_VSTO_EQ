@@ -160,6 +160,9 @@
   -->
   <ItemGroup>
     <Compile Include="Control\InitDataReader.cs" />
+    <Compile Include="Control\JsonHelper.cs" />
+    <Compile Include="Control\JsonParser.cs" />
+    <Compile Include="Control\SQL_Generator.cs" />
     <Compile Include="EQ_Ribbon.cs">
       <SubType>Component</SubType>
     </Compile>

@@ -28,31 +28,45 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.templates = new System.Windows.Forms.ComboBox();
+            this.comfirm = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // comboBox1
+            // templates
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(48, 34);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(235, 20);
-            this.comboBox1.TabIndex = 0;
+            this.templates.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.templates.FormattingEnabled = true;
+            this.templates.Location = new System.Drawing.Point(48, 24);
+            this.templates.Name = "templates";
+            this.templates.Size = new System.Drawing.Size(235, 20);
+            this.templates.TabIndex = 0;
+            // 
+            // comfirm
+            // 
+            this.comfirm.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.comfirm.Location = new System.Drawing.Point(123, 69);
+            this.comfirm.Name = "comfirm";
+            this.comfirm.Size = new System.Drawing.Size(75, 23);
+            this.comfirm.TabIndex = 1;
+            this.comfirm.Text = "确定";
+            this.comfirm.UseVisualStyleBackColor = true;
             // 
             // SelectTemplate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(328, 114);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.comfirm);
+            this.Controls.Add(this.templates);
             this.Name = "SelectTemplate";
-            this.Text = "SelectTemplate";
+            this.Text = "选择模板";
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox templates;
+        private System.Windows.Forms.Button comfirm;
     }
 }

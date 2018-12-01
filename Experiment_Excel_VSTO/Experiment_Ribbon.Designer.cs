@@ -55,7 +55,7 @@
             this.group1.Items.Add(this.Get_Sheet_Info);
             this.group1.Items.Add(this.GetDatatoDataSet);
             this.group1.Items.Add(this.new_sheet);
-            this.group1.Label = "group1";
+            this.group1.Label = "基本操作1";
             this.group1.Name = "group1";
             // 
             // Get_Sheet_Info

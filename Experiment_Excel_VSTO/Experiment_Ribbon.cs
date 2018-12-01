@@ -71,21 +71,7 @@ namespace Experiment_Excel_VSTO
             }
             
         }
-
-        /// <summary>
-        /// 新建一个Sheet页;
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void new_sheet_Click(object sender, RibbonControlEventArgs e)
-        {
-            Worksheet wst;
-            
-            wst = (Worksheet)Globals.ThisAddIn.Application.Worksheets.Add();
-            wst.Name = "新建Sheet页";
-        }
-
-
+        
         /// <summary>
         /// 通过SQL语句获取数据，并保存到DataSet的DataTable当中;
         /// </summary>
@@ -112,6 +98,7 @@ namespace Experiment_Excel_VSTO
             list1 = worksheet.Controls.AddListObject(cell, "list1");
             list1.AutoSetDataBoundColumnHeaders = true;
 
+            // 通过OleDB联表查询;
             using (OleDbConnection con = new OleDbConnection(connectionString))
             {
                 var dataTable = new System.Data.DataTable();
@@ -130,16 +117,27 @@ namespace Experiment_Excel_VSTO
                 list1.SetDataBinding(dataTable, null, "姓名", "政治面貌", "考核结果");
             }
 
-            // 打印DataTable当中的所有数据;
+            // 循环遍历DataTable当中的所有数据，并打印(但是在Excel开发中好像打印不出来……);
 //             foreach (System.Data.DataTable dt in ds.Tables)
 //             {
 //                 foreach (DataRow dr in dt.Rows)
 //                     foreach (DataColumn dc in dt.Columns)
 //                         Console.WriteLine("1:" + dt.TableName + "2:" + dc.ColumnName + "3:" + dr[dc]);
 //             }
-
-
         }
-        
+
+        /// <summary>
+        /// 新建一个Sheet页;
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void new_sheet_Click(object sender, RibbonControlEventArgs e)
+        {
+            Worksheet wst;
+
+            wst = (Worksheet)Globals.ThisAddIn.Application.Worksheets.Add();
+            wst.Name = "新建Sheet页";
+        }
+
     }
 }

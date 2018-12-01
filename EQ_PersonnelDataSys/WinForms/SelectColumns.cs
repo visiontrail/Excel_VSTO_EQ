@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Office.Tools;
 
 namespace EQ_PersonnelDataSys.WinForms
 {
@@ -83,13 +84,7 @@ namespace EQ_PersonnelDataSys.WinForms
         /// <param name="e"></param>
         private void Confirm_Click(object sender, EventArgs e)
         {
-            // 实验代码，遍历了所有表所有行的所有数据;
-            //foreach (DataTable dt in EQ_Ribbon.ds.Tables)
-            //{
-            //    foreach (DataRow dr in dt.Rows)
-            //        foreach (DataColumn dc in dt.Columns)
-            //            Console.WriteLine("1:" + dt.TableName + "2:" + dc.ColumnName + "3:" + dr[dc]);
-            //}
+            // 连接当前打开的文档到OleDB;
             string connectionString = string.Format("provider=Microsoft.Jet.OLEDB.4.0; data source={0};" +
                 "Extended Properties=Excel 8.0;", ThisAddIn.filepath);
 
@@ -98,7 +93,7 @@ namespace EQ_PersonnelDataSys.WinForms
             using (OleDbConnection con = new OleDbConnection(connectionString))
             {
                 var dataTable = new System.Data.DataTable();
-                //string query = string.Format("SELECT * FROM [{0}]", "考核情况" + "$" + "left join [政治面貌$]");
+
                 string query = string.Format("SELECT [政治面貌$].姓名, [政治面貌$].政治面貌, [考核情况$].考核结果" +
                     " FROM [政治面貌$], [考核情况$]" +
                     " WHERE [政治面貌$].姓名 = [考核情况$].姓名 ");
@@ -110,14 +105,7 @@ namespace EQ_PersonnelDataSys.WinForms
                 ds.Tables.Add(dataTable);
                 con.Close();
             }
-
-            foreach (DataTable dt in ds.Tables)
-            {
-                foreach (DataRow dr in dt.Rows)
-                    foreach (DataColumn dc in dt.Columns)
-                        Console.WriteLine("1:" + dt.TableName + "2:" + dc.ColumnName + "3:" + dr[dc]);
-            }
-
+            
         }
     }
 }

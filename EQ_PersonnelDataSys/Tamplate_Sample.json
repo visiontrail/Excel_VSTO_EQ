@@ -1,0 +1,44 @@
+{
+    "TemplateList" : [
+        {
+            "TemplateName" : "党员考核情况",
+            "ColumnList" : [
+                {
+                    "TableName" : "考核情况",
+                    "ColumnName" : "考核时间"
+                },
+                {
+                    "TableName" : "考核情况",
+                    "ColumnName" : "考核结果"
+                },
+                {
+                    "TableName" : "政治面貌",
+                    "ColumnName" : "政治面貌"
+                }
+            ]
+        },
+        {
+            "TemplateName" : "岗位职级的学历学位",
+            "ColumnList" : [
+                {
+                    "TableName" : "岗位职级",
+                    "ColumnName" : "职级岗位类别(ZU)"
+                },
+                {
+                    "TableName" : "学历学位",
+                    "ColumnName" : "学历"
+                },
+                {
+                    "TableName" : "学历学位",
+                    "ColumnName" : "学位"
+                },
+                {
+                    "TableName" : "学历学位",
+                    "ColumnName" : "学校（单位）名称"
+                }
+            ]
+        }
+    ]
+    
+    
+}

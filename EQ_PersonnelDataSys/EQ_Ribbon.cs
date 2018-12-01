@@ -28,8 +28,6 @@ namespace EQ_PersonnelDataSys
         private void Select_Column_Click(object sender, RibbonControlEventArgs e)
         {
             Dictionary<string, List<string>> DbColumnPairs = new Dictionary<string, List<string>>();
-            string connectionString = string.Format("provider=Microsoft.Jet.OLEDB.4.0; data source={0};" +
-                "Extended Properties=Excel 8.0;", ThisAddIn.filepath);
 
             // 获取打开工作表的所有表的名字;
             foreach (var sheetlist in Globals.ThisAddIn.Application.Worksheets)
@@ -44,26 +42,13 @@ namespace EQ_PersonnelDataSys
                     continue;
                 }
 
-                // 将所有表都保存到DataSet当中;保存到内存中，后续使用内存数据库查询会更快;
-                using (OleDbConnection con = new OleDbConnection(connectionString))
-                {
-                    var dataTable = new System.Data.DataTable();
-                    dataTable.TableName = sheet_name;
-                    string query = string.Format("SELECT * FROM [{0}]", sheet_name + "$");
-                    con.Open();
-                    OleDbDataAdapter adapter = new OleDbDataAdapter(query, con);
-                    
-                    adapter.Fill(dataTable);
-                    ds.Tables.Add(dataTable);
-                }
-
                 // 取出这个表所有的列;
                 foreach (Range all_col in wst.UsedRange.Columns)
                 {
                     var temp = all_col.Value2;
                     try
                     {
-                        // 如果是姓名则不显示，默认用它作为索引;
+                        // 地震局人事系统专用：如果是姓名则不显示，默认用它作为索引;
                         string ret = (string)all_col.Value2[1, 1];
                         if(ret == "姓名")
                         {
@@ -85,14 +70,15 @@ namespace EQ_PersonnelDataSys
             sc_window.Show();
         }
 
+        /// <summary>
+        /// 弹出选择模板的对话框;
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Select_Template_Click(object sender, RibbonControlEventArgs e)
         {
-            System.Data.DataTable dt = ds.Tables["考核情况$"];
-            DataRow[] dtRow = dt.Select("姓名=‘安艳芬’"); //根据查询条件，筛选出所有满足条件的列
-            foreach (DataRow item in dtRow)//把满足条件的所有列赛到新表中
-            {
-                //item.ItemArray;
-            }
+            SelectTemplate window = new SelectTemplate();
+            window.Show();
         }
     }
 }

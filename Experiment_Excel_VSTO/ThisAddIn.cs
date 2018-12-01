@@ -12,7 +12,7 @@ namespace Experiment_Excel_VSTO
 {
     public partial class ThisAddIn
     {
-        public static string filepath;
+        public static string filepath;    // 当前打开文档的路径;
 
         /// <summary>
         /// 当整个Excel程序启动的时候;
