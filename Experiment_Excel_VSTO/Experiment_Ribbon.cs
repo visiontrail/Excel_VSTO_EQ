@@ -77,7 +77,10 @@ namespace Experiment_Excel_VSTO
         /// <param name="e"></param>
         private void new_sheet_Click(object sender, RibbonControlEventArgs e)
         {
-            Globals.ThisAddIn.Application.ThisWorkbook.Worksheets.Add();
+            Worksheet wst;
+            
+            wst = (Worksheet)Globals.ThisAddIn.Application.Worksheets.Add();
+            wst.Name = "新建Sheet页";
         }
 
 
@@ -118,7 +121,12 @@ namespace Experiment_Excel_VSTO
                         Console.WriteLine("1:" + dt.TableName + "2:" + dc.ColumnName + "3:" + dr[dc]);
             }
 
+            Worksheet wst;
 
+            wst = (Worksheet)Globals.ThisAddIn.Application.Worksheets.Add();
+            wst.Name = "新建Sheet页";
+
+            
 
         }
         
