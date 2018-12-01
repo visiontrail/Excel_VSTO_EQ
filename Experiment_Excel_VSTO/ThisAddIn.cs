@@ -12,6 +12,8 @@ namespace Experiment_Excel_VSTO
 {
     public partial class ThisAddIn
     {
+        public static string filepath;
+
         private void ThisAddIn_Startup(object sender, System.EventArgs e)
         {
         }
@@ -53,7 +55,8 @@ namespace Experiment_Excel_VSTO
 
         private void Application_WorkbookOpen(Excel.Workbook Wb)
         {
-            MessageBox.Show("WorkBook Active!" + Wb.Name);
+            // 获取Excel文件的路径;
+            filepath = Wb.Path + "\\" + Wb.Name;
         }
 
         #endregion
