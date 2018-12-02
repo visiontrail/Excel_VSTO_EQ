@@ -35,23 +35,19 @@ namespace EQ_PersonnelDataSys.WinForms
             {
                 MessageBox.Show("名称不能为空！");
             }
-
-            string json_content = JsonHelper.ReadJsonFileToString(ThisAddIn.templatefilepath);
             
-            TemplateList tl = new TemplateList();
+            // 返回当前已经存储的TemplateList;
+            TemplateList tl = JsonParser.FromJsonToTemplate();
+
+            // 获取当前要新建的ColumnList;
             ColumnTemplate ct = new ColumnTemplate();
             ct.TemplateName = this.template_name.Text.ToString();
             ct.ColumnList = columns;
 
-            if ((json_content != ""))
-            {
-                tl = (TemplateList)ColumnTemplate.JsonToObject(json_content, tl);
-            }
-
+            // 将新建的ColumnList追加至TemplateList;
             tl.Template_list.Add(ct);
-
             
-
+            // 将组合好的Json回填到Template文件中;
             string s_json = ColumnTemplate.ObjectToJson(tl);
             JsonHelper.WriteJsonFile(ThisAddIn.templatefilepath, s_json);
 

@@ -50,6 +50,7 @@
             this.comfirm.TabIndex = 1;
             this.comfirm.Text = "确定";
             this.comfirm.UseVisualStyleBackColor = true;
+            this.comfirm.Click += new System.EventHandler(this.comfirm_Click);
             // 
             // SelectTemplate
             // 

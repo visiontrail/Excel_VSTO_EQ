@@ -13,6 +13,21 @@ namespace EQ_PersonnelDataSys.Control
     /// </summary>
     public class JsonParser
     {
+        public static TemplateList FromJsonToTemplate()
+        {
+            // 读取JSON文件到内存中;
+            string json_content = JsonHelper.ReadJsonFileToString(ThisAddIn.templatefilepath);
 
+            TemplateList tl = new TemplateList();
+            ColumnTemplate ct = new ColumnTemplate();
+
+            // 如果模板文件不为空，则填入到内存中;
+            if ((json_content != ""))
+            {
+                tl = (TemplateList)ColumnTemplate.JsonToObject(json_content, tl);
+            }
+
+            return tl;
+        }
     }
 }

@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using System.Windows.Forms;
 
 namespace EQ_PersonnelDataSys.Control
 {
@@ -57,6 +58,10 @@ namespace EQ_PersonnelDataSys.Control
                     {
                         ret = sr.ReadToEnd();
                     }
+                }
+                else
+                {
+                    MessageBox.Show("没有找到模板文件，请选择新建查询，新增一个查询模板");
                 }
             }
             catch (Exception ex)
