@@ -100,6 +100,7 @@ namespace EQ_PersonnelDataSys.WinForms
         {
             SaveTemplate st_window = new SaveTemplate(columns);
             st_window.Show();
+            this.Close();
         }
 
         /// <summary>
@@ -109,28 +110,8 @@ namespace EQ_PersonnelDataSys.WinForms
         /// <param name="e"></param>
         private void Confirm_Click(object sender, EventArgs e)
         {
-            // 连接当前打开的文档到OleDB;
-            string connectionString = string.Format("provider=Microsoft.Jet.OLEDB.4.0; data source={0};" +
-                "Extended Properties=Excel 8.0;", ThisAddIn.filepath);
 
-            DataSet ds = new DataSet();
-
-            using (OleDbConnection con = new OleDbConnection(connectionString))
-            {
-                var dataTable = new System.Data.DataTable();
-
-                string query = string.Format("SELECT [政治面貌$].姓名, [政治面貌$].政治面貌, [考核情况$].考核结果" +
-                    " FROM [政治面貌$], [考核情况$]" +
-                    " WHERE [政治面貌$].姓名 = [考核情况$].姓名 ");
-
-                con.Open();
-                OleDbDataAdapter adapter = new OleDbDataAdapter(query, con);
-
-                adapter.Fill(dataTable);
-                ds.Tables.Add(dataTable);
-                con.Close();
-            }
-            
+            this.Close();
         }
     }
 }

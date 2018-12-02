@@ -103,9 +103,17 @@ namespace Experiment_Excel_VSTO
             {
                 var dataTable = new System.Data.DataTable();
                 //string query = string.Format("SELECT * FROM [{0}]", "考核情况" + "$" + "left join [政治面貌$]");
-                string query = string.Format("SELECT [政治面貌$].姓名, [政治面貌$].政治面貌, [考核情况$].考核结果" +
-                    " FROM [政治面貌$], [考核情况$]" +
-                    " WHERE [政治面貌$].姓名 = [考核情况$].姓名 ");
+                //string query = string.Format("SELECT [政治面貌$].姓名, [政治面貌$].政治面貌, [考核情况$].考核结果,[考核情况$].考核时间, [行政职务$].职务层次, [行政职务$].职务名称" +
+                //    " FROM [政治面貌$],[考核情况$],[行政职务$]" +
+                //    " WHERE [政治面貌$].姓名 = [考核情况$].姓名 AND [政治面貌$].姓名 = [行政职务$].姓名");
+
+                string query = string.Format("SELECT [政治面貌$].姓名, [政治面貌$].政治面貌, [考核情况$].考核结果,[考核情况$].考核时间, [行政职务$].职务层次, [行政职务$].职务名称" +
+                    " FROM [政治面貌$],[考核情况$],[行政职务$]" +
+                    " WHERE [政治面貌$].姓名 = [考核情况$].姓名");
+
+                //string query = string.Format("SELECT [政治面貌$].姓名, [政治面貌$].政治面貌, [考核情况$].考核结果,[考核情况$].考核时间, [行政职务$].职务层次, [行政职务$].职务名称" +
+                //    " FROM [政治面貌$] as A INNER JOIN [考核情况$] as B" +
+                //    " ON A.姓名=B.姓名 INNER JOIN [行政职务$] as C ON A.姓名=C.姓名 ORDER BY A.姓名");
 
                 con.Open();
                 OleDbDataAdapter adapter = new OleDbDataAdapter(query, con);
@@ -114,7 +122,7 @@ namespace Experiment_Excel_VSTO
                 ds.Tables.Add(dataTable);
                 con.Close();
 
-                list1.SetDataBinding(dataTable, null, "姓名", "政治面貌", "考核结果");
+                list1.SetDataBinding(dataTable, null, "姓名","考核时间", "政治面貌", "考核结果", "职务层次", "职务名称");
             }
 
             // 循环遍历DataTable当中的所有数据，并打印(但是在Excel开发中好像打印不出来……);

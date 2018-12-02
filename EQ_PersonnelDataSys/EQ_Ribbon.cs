@@ -53,7 +53,7 @@ namespace EQ_PersonnelDataSys
                         string ret = (string)all_col.Value2[1, 1];
                         if(ret == "姓名")
                         {
-                            continue;
+                            //continue;
                         }
 
                         Column column = new Column();

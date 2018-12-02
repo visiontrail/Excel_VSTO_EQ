@@ -124,7 +124,7 @@
             // Save_Template
             // 
             this.Save_Template.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Save_Template.Location = new System.Drawing.Point(458, 72);
+            this.Save_Template.Location = new System.Drawing.Point(458, 189);
             this.Save_Template.Name = "Save_Template";
             this.Save_Template.Size = new System.Drawing.Size(75, 23);
             this.Save_Template.TabIndex = 8;
@@ -141,6 +141,7 @@
             this.Confirm.TabIndex = 9;
             this.Confirm.Text = "确定";
             this.Confirm.UseVisualStyleBackColor = true;
+            this.Confirm.Visible = false;
             this.Confirm.Click += new System.EventHandler(this.Confirm_Click);
             // 
             // label4
@@ -172,6 +173,7 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.Enabled = false;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(68, 197);
             this.comboBox1.Name = "comboBox1";
