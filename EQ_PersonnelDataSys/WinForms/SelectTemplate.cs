@@ -20,7 +20,7 @@ namespace EQ_PersonnelDataSys.WinForms
         public SelectTemplate()
         {
             InitializeComponent();
-            JObject jObject = JsonHelper.ReadJsonFileMethodOne(ThisAddIn.templatefilepath);
+            JObject jObject = JsonHelper.ReadJsonFileToJobject(ThisAddIn.templatefilepath);
             template_list = new List<string>();
 
             foreach(var template in jObject["TemplateList"])

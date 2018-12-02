@@ -26,14 +26,43 @@ namespace EQ_PersonnelDataSys.Control
             return JObj;
         }
 
-        public static JObject ReadJsonFileMethodOne(string sFilePath)
+        /// <summary>
+        /// 读取Json数据并返回JObject类型;
+        /// </summary>
+        /// <param name="sFilePath"></param>
+        /// <returns></returns>
+        public static JObject ReadJsonFileToJobject(string sFilePath)
         {
             StreamReader fs = File.OpenText(sFilePath);
-            //JObject JObj = new JObject();
 
             JObject JObj = (JObject)JToken.ReadFrom(new JsonTextReader(fs));
             fs.Close();
+            
             return JObj;
+        }
+
+        /// <summary>
+        /// 读取Json文件数据并返回string类型;
+        /// </summary>
+        /// <param name="filepath"></param>
+        /// <returns></returns>
+        public static string ReadJsonFileToString(string filepath)
+        {
+            string ret = "";
+            try
+            {
+                if (File.Exists(filepath))
+                {
+                    using (StreamReader sr = new StreamReader(filepath, Encoding.Default))
+                    {
+                        ret = sr.ReadToEnd();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+            }
+            return ret;
         }
 
         /// <summary>

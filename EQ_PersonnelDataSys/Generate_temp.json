@@ -1,0 +1,25 @@
+{
+	"Template_list": [
+        {
+            "TemplateName": "你好",
+            "ColumnList": [
+                {
+                "TableName": "考核情况",
+                "ColumnName": "考核时间"
+                }, 
+                {
+                "TableName": "政治面貌",
+                "ColumnName": "参加党派时所在单位"
+                }, 
+                {
+                "TableName": "专业技术职务",
+                "ColumnName": "取得资格时间"
+                }, 
+                {
+                "TableName": "工勤岗位",
+                "ColumnName": "开始时间"
+                }
+            ]
+        }
+    ]
+}

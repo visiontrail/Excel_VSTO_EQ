@@ -8,6 +8,7 @@ using EQ_PersonnelDataSys.WinForms;
 using System.Windows.Forms;
 using System.Data;
 using System.Data.OleDb;
+using EQ_PersonnelDataSys.Model;
 
 namespace EQ_PersonnelDataSys
 {
@@ -27,13 +28,13 @@ namespace EQ_PersonnelDataSys
         /// <param name="e"></param>
         private void Select_Column_Click(object sender, RibbonControlEventArgs e)
         {
-            Dictionary<string, List<string>> DbColumnPairs = new Dictionary<string, List<string>>();
+            Dictionary<string, List<Column>> DbColumnPairs = new Dictionary<string, List<Column>>();
 
             // 获取打开工作表的所有表的名字;
             foreach (var sheetlist in Globals.ThisAddIn.Application.Worksheets)
             {
                 string sheet_name = ((Worksheet)sheetlist).Name;
-                List<string> all_column = new List<string>();
+                List<Column> all_column = new List<Column>();
 
                 // 获取这个WorkSheet，如果列数小于1的话，则不进行任何处理;
                 Worksheet wst = ((Worksheet)Globals.ThisAddIn.Application.Worksheets[sheet_name]);
@@ -54,7 +55,11 @@ namespace EQ_PersonnelDataSys
                         {
                             continue;
                         }
-                        all_column.Add(ret);
+
+                        Column column = new Column();
+                        column.ColumnName = ret;
+                        column.TableName = sheet_name;
+                        all_column.Add(column);
                     }
                     catch
                     {
@@ -63,7 +68,7 @@ namespace EQ_PersonnelDataSys
                 }
 
                 // 将表和表包含的列填入一个字典中;
-                DbColumnPairs.Add(((Worksheet)sheetlist).Name, all_column);
+                DbColumnPairs.Add(sheet_name, all_column);
             }
             
             SelectColumns sc_window = new SelectColumns(DbColumnPairs);

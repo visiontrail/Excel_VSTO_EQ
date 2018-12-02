@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.Office.Tools;
+using EQ_PersonnelDataSys.Model;
 
 namespace EQ_PersonnelDataSys.WinForms
 {
@@ -22,10 +23,11 @@ namespace EQ_PersonnelDataSys.WinForms
         /// Key：数据表;
         /// Value：数据表包含的列;
         /// </summary>
-        private Dictionary<string, List<string>> all_data = new Dictionary<string, List<string>>();
+        private Dictionary<string, List<Column>> all_data = new Dictionary<string, List<Column>>();
+        ColumnTemplate columnTemplate = new ColumnTemplate();
+        List<Column> columns = new List<Column>();
 
-
-        public SelectColumns(Dictionary<string, List<string>> add_db_name)
+        public SelectColumns(Dictionary<string, List<Column>> add_db_name)
         {
             InitializeComponent();
             all_data = add_db_name;
@@ -35,12 +37,18 @@ namespace EQ_PersonnelDataSys.WinForms
             
         }
 
+        /// <summary>
+        /// 当用户选择表之后;
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void All_db_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string seleted = (sender as ListBox).SelectedItem.ToString();
+            string selected = (sender as ListBox).SelectedItem.ToString();
             
-            this.all_col.DataSource = all_data[seleted];
-
+            // 数据Binding并确认需要显示的内容;
+            this.all_col.DataSource = all_data[selected];
+            this.all_col.DisplayMember = "ColumnName";
         }
 
         /// <summary>
@@ -50,11 +58,16 @@ namespace EQ_PersonnelDataSys.WinForms
         /// <param name="e"></param>
         private void Sel_Column_Click(object sender, EventArgs e)
         {
-            if(Template_Col.Items.Contains(all_col.SelectedItem.ToString()))
+            if(Template_Col.Items.Contains(all_col.SelectedItem))
             {
                 MessageBox.Show("已选择相同项!");
             }
-            this.Template_Col.Items.Add(this.all_col.SelectedItem.ToString());
+
+            this.Template_Col.Items.Add(this.all_col.SelectedItem);
+            this.Template_Col.DisplayMember = "ColumnName";
+
+            // 每一次用户选择，都把它保存到columns当中;
+            columns.Add(this.all_col.SelectedItem as Column);
         }
 
         /// <summary>
@@ -64,7 +77,18 @@ namespace EQ_PersonnelDataSys.WinForms
         /// <param name="e"></param>
         private void Del_Column_Click(object sender, EventArgs e)
         {
-            this.Template_Col.Items.Remove(this.Template_Col.SelectedItem.ToString());
+            Column Rm_column = this.Template_Col.SelectedItem as Column;
+
+            if(columns.Remove(Rm_column))
+            {
+                Console.WriteLine("Success!");
+            }
+            else
+            {
+                Console.WriteLine("Fail!");
+            }
+
+            this.Template_Col.Items.Remove(this.Template_Col.SelectedItem);
         }
 
         /// <summary>
@@ -74,7 +98,8 @@ namespace EQ_PersonnelDataSys.WinForms
         /// <param name="e"></param>
         private void Save_Template_Click(object sender, EventArgs e)
         {
-
+            SaveTemplate st_window = new SaveTemplate(columns);
+            st_window.Show();
         }
 
         /// <summary>
