@@ -110,7 +110,7 @@ namespace EQ_PersonnelDataSys.WinForms
         /// <param name="e"></param>
         private void Confirm_Click(object sender, EventArgs e)
         {
-
+            // 新建查询制作模板保存使用，该按钮不做任何处理;
             this.Close();
         }
     }

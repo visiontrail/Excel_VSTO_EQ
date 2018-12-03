@@ -43,8 +43,16 @@ namespace Experiment_Excel_VSTO
                 List<string> all_column = new List<string>();
 
                 // 写入Sheet表中的单元格:
-                Range cell = wst.Range["A8"];
-                cell.Value2 = "123";
+                ((Range)wst.Range["A8"]).Value = "111";
+
+                // 删除某一行;
+                ((Range)wst2.Rows[2, Type.Missing]).Delete(XlDeleteShiftDirection.xlShiftToLeft);
+
+                // 删除一列数据;
+                ((Range)wst2.Cells[1, 2]).EntireColumn.Delete(0);
+
+                // 选择一个单元格;
+                ((Range)wst2.Cells[1, 2]).Select();
 
                 int count_num = wst2.UsedRange.Rows.Count;
                 int columns_num = wst2.UsedRange.Columns.Count;
