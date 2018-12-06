@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using EQ_PersonnelDataSys.Model;
 using EQ_PersonnelDataSys.Control;
+using System.IO;
 
 namespace EQ_PersonnelDataSys.WinForms
 {
@@ -35,9 +36,18 @@ namespace EQ_PersonnelDataSys.WinForms
             {
                 MessageBox.Show("名称不能为空！");
             }
-            
+
             // 返回当前已经存储的TemplateList;
-            TemplateList tl = JsonParser.FromJsonToTemplate();
+            TemplateList tl = new TemplateList();
+            
+            if (!File.Exists(ThisAddIn.templatefilepath))
+            {
+                // Do Nothing;
+            }
+            else
+            {
+                tl = JsonParser.FromJsonToTemplate();
+            }
 
             // 获取当前要新建的ColumnList;
             ColumnTemplate ct = new ColumnTemplate();

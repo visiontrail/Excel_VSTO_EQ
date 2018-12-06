@@ -50,6 +50,7 @@ namespace EQ_PersonnelDataSys.Control
         public static string ReadJsonFileToString(string filepath)
         {
             string ret = "";
+            
             try
             {
                 if (File.Exists(filepath))

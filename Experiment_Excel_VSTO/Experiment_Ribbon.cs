@@ -155,5 +155,16 @@ namespace Experiment_Excel_VSTO
             wst.Name = "新建Sheet页";
         }
 
+        private void add_Chart_Click(object sender, RibbonControlEventArgs e)
+        {
+            ExcelTools.Excel.Worksheet worksheet = Globals.Factory.GetVstoObject(
+                Globals.ThisAddIn.Application.ActiveWorkbook.ActiveSheet);
+
+
+            Range cells = worksheet.Range["A5", "D8"];
+            ExcelTools.Excel.Chart chart = worksheet.Controls.AddChart(cells, "employees");
+            chart.ChartType = XlChartType.xl3DPie;
+            chart.SetSourceData(cells);
+        }
     }
 }

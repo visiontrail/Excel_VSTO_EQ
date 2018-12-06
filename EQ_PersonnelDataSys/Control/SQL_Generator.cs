@@ -20,7 +20,11 @@ namespace EQ_PersonnelDataSys.Control
             string select_col = "";
             string select_table = "";
             string where = "";
-            List<string> selTablelist = new List<string>();
+            List<string> selTablelist = new List<string>();   // 当前用户选择的表;
+
+            // 暂时把主表写死在代码中;
+            string personnel_listtable_name = "[花名册$].姓名,";
+            string personnel_listtable = "[花名册$], ";
 
             foreach (Column col in ct.ColumnList)
             {
@@ -29,26 +33,32 @@ namespace EQ_PersonnelDataSys.Control
                 // 将要查询的表放入容器;
                 if(!selTablelist.Contains(col.TableName))
                 {
+                    if(col.TableName == "花名册")
+                    {
+                        continue;
+                    }
                     selTablelist.Add(col.TableName);
                 }
             }
-            
-            ret = ret + select_col.Substring(0, select_col.Length - 2) + " FROM ";
+
+            ret += personnel_listtable_name;
+            ret += select_col.Substring(0, select_col.Length - 2) + " FROM ";
 
             foreach(string tablename in selTablelist)
             {
                 select_table += "[" + tablename + "$], ";
             }
 
+            ret += personnel_listtable;
             ret = ret + select_table.Substring(0, select_table.Length - 2) + " WHERE ";
 
-            //foreach (string tablename in selTablelist)
-            //{
-            //    where += "[" + tablename + "$].姓名";
-            //}
+            foreach(var temptablename in selTablelist)
+            {
+                where += "[花名册$].姓名" + "=" + "[" + temptablename + "$].姓名 AND ";
+            }
 
-            where = "[" + selTablelist[0] + "$].姓名=" + "[" + selTablelist[1] + "$].姓名";
-            ret += where;
+            //where = "[" + selTablelist[0] + "$].姓名=" + "[" + selTablelist[1] + "$].姓名";
+            ret += where.Substring(0, where.Length - 5);
 
             return ret;
         }

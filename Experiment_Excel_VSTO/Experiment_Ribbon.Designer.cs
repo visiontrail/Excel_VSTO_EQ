@@ -39,6 +39,7 @@
             this.Get_Sheet_Info = this.Factory.CreateRibbonButton();
             this.GetDatatoDataSet = this.Factory.CreateRibbonButton();
             this.new_sheet = this.Factory.CreateRibbonButton();
+            this.add_Chart = this.Factory.CreateRibbonButton();
             this.tab1.SuspendLayout();
             this.group1.SuspendLayout();
             this.SuspendLayout();
@@ -55,6 +56,7 @@
             this.group1.Items.Add(this.Get_Sheet_Info);
             this.group1.Items.Add(this.GetDatatoDataSet);
             this.group1.Items.Add(this.new_sheet);
+            this.group1.Items.Add(this.add_Chart);
             this.group1.Label = "基本操作1";
             this.group1.Name = "group1";
             // 
@@ -75,6 +77,12 @@
             this.new_sheet.Label = "新建一个Sheet页";
             this.new_sheet.Name = "new_sheet";
             this.new_sheet.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.new_sheet_Click);
+            // 
+            // add_Chart
+            // 
+            this.add_Chart.Label = "添加一个图表到WorkSheet";
+            this.add_Chart.Name = "add_Chart";
+            this.add_Chart.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.add_Chart_Click);
             // 
             // Experiment_Ribbon
             // 
@@ -97,6 +105,7 @@
         internal Microsoft.Office.Tools.Ribbon.RibbonButton Get_Sheet_Info;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton GetDatatoDataSet;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton new_sheet;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton add_Chart;
     }
 
     partial class ThisRibbonCollection

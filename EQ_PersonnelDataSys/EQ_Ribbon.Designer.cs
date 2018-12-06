@@ -37,14 +37,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EQ_Ribbon));
             this.tab1 = this.Factory.CreateRibbonTab();
             this.group1 = this.Factory.CreateRibbonGroup();
-            this.group2 = this.Factory.CreateRibbonGroup();
-            this.UseRAMDB = this.Factory.CreateRibbonCheckBox();
-            this.ChangeSameTime = this.Factory.CreateRibbonCheckBox();
             this.Select_Column = this.Factory.CreateRibbonButton();
             this.Select_Template = this.Factory.CreateRibbonButton();
+            this.group2 = this.Factory.CreateRibbonGroup();
+            this.UseRAMDB = this.Factory.CreateRibbonCheckBox();
+            this.label1 = this.Factory.CreateRibbonLabel();
+            this.ChangeSameTime = this.Factory.CreateRibbonCheckBox();
             this.group3 = this.Factory.CreateRibbonGroup();
             this.button1 = this.Factory.CreateRibbonButton();
-            this.label1 = this.Factory.CreateRibbonLabel();
             this.tab1.SuspendLayout();
             this.group1.SuspendLayout();
             this.group2.SuspendLayout();
@@ -67,26 +67,6 @@
             this.group1.Label = "生成表格";
             this.group1.Name = "group1";
             // 
-            // group2
-            // 
-            this.group2.Items.Add(this.UseRAMDB);
-            this.group2.Items.Add(this.label1);
-            this.group2.Items.Add(this.ChangeSameTime);
-            this.group2.Label = "功能选项";
-            this.group2.Name = "group2";
-            // 
-            // UseRAMDB
-            // 
-            this.UseRAMDB.Enabled = false;
-            this.UseRAMDB.Label = "高效查询(开发中)";
-            this.UseRAMDB.Name = "UseRAMDB";
-            // 
-            // ChangeSameTime
-            // 
-            this.ChangeSameTime.Enabled = false;
-            this.ChangeSameTime.Label = "同步修改（开发中）";
-            this.ChangeSameTime.Name = "ChangeSameTime";
-            // 
             // Select_Column
             // 
             this.Select_Column.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
@@ -105,6 +85,31 @@
             this.Select_Template.ShowImage = true;
             this.Select_Template.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.Select_Template_Click);
             // 
+            // group2
+            // 
+            this.group2.Items.Add(this.UseRAMDB);
+            this.group2.Items.Add(this.label1);
+            this.group2.Items.Add(this.ChangeSameTime);
+            this.group2.Label = "功能选项";
+            this.group2.Name = "group2";
+            // 
+            // UseRAMDB
+            // 
+            this.UseRAMDB.Enabled = false;
+            this.UseRAMDB.Label = "高效查询(开发中)";
+            this.UseRAMDB.Name = "UseRAMDB";
+            // 
+            // label1
+            // 
+            this.label1.Label = "（开启高效查询，请勿再修改表中内容）";
+            this.label1.Name = "label1";
+            // 
+            // ChangeSameTime
+            // 
+            this.ChangeSameTime.Enabled = false;
+            this.ChangeSameTime.Label = "同步修改（开发中）";
+            this.ChangeSameTime.Name = "ChangeSameTime";
+            // 
             // group3
             // 
             this.group3.Items.Add(this.button1);
@@ -115,11 +120,6 @@
             // 
             this.button1.Label = "生成并计算XX";
             this.button1.Name = "button1";
-            // 
-            // label1
-            // 
-            this.label1.Label = "（开启高效查询，请勿再修改表中内容）";
-            this.label1.Name = "label1";
             // 
             // EQ_Ribbon
             // 

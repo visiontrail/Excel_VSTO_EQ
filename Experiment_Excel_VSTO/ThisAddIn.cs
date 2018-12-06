@@ -7,6 +7,8 @@ using Excel = Microsoft.Office.Interop.Excel;
 using Office = Microsoft.Office.Core;
 using Microsoft.Office.Tools.Excel;
 using System.Windows.Forms;
+using System.Threading.Tasks;
+using System.Threading;
 
 namespace Experiment_Excel_VSTO
 {

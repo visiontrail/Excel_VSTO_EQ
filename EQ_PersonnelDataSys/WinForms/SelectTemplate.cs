@@ -44,11 +44,14 @@ namespace EQ_PersonnelDataSys.WinForms
             ColumnTemplate column = this.templates.SelectedItem as ColumnTemplate;
             string sheetname = (this.templates.SelectedItem as ColumnTemplate).TemplateName;
             List<string> sheetcolumn = new List<string>();
-            
-            foreach(Column iter in (this.templates.SelectedItem as ColumnTemplate).ColumnList)
+
+            sheetcolumn.Add("姓名");
+
+            foreach (Column iter in (this.templates.SelectedItem as ColumnTemplate).ColumnList)
             {
                 sheetcolumn.Add(iter.ColumnName);
             }
+            
 
             string[] sheetnames = sheetcolumn.ToArray();
             // OleDB获取Excel数据库;
